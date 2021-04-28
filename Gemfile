@@ -8,7 +8,7 @@ gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 # Use postgresql as the database for Active Record
 
 # Use Puma as the app server
-gem 'puma', '~> 5.0'
+gem 'unicorn'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -68,3 +68,5 @@ gem "jquery-datatables", "~> 1.10"
 gem "bootstrap", "~> 4.6"
 
 gem "jquery", "~> 0.0.1"
+
+gem 'select2-rails'

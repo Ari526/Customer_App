@@ -10,3 +10,8 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree
+//= require select2
+
+    $(document).ready(function() {
+      $('select#simple-example').select2();
+    });
