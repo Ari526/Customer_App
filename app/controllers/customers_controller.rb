@@ -18,6 +18,10 @@ class CustomersController < ApplicationController
   # GET /customers/new
   def new
     @customer = Customer.new
+    respond_to do |format|
+    format.html
+    format.js
+  end
   end
 
   # GET /customers/1/edit
