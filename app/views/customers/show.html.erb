@@ -1,5 +1,4 @@
 
-
 <p>
   <strong>First name:</strong>
   <%= @customer.first_name %>
@@ -11,23 +10,23 @@
 </p>
 
 <p>
-  <strong>String:</strong>
-  <%= @customer.string %>
+  <strong>Gender:</strong>
+  <%= @customer.gender %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @customer.age %>
+</p>
+
+<p>
+  <strong>Phone_number:</strong>
+  <%= @customer.phone_number %>
 </p>
 
 <p>
   <strong>Email:</strong>
   <%= @customer.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @customer.phone %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @customer.twitter %>
 </p>
 
 <%= link_to 'Edit', edit_customer_path(@customer), class:"btn btn-secondary"%> |

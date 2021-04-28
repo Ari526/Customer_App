@@ -4,6 +4,11 @@ class CustomersController < ApplicationController
   # GET /customers or /customers.json
   def index
     @customers = Customer.all
+
+  end
+
+  def search
+    @customers = Customer.where("")
   end
 
   # GET /customers/1 or /customers/1.json
@@ -64,6 +69,6 @@ class CustomersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def customer_params
-      params.require(:customer).permit(:first_name, :last_name, :string, :email, :phone, :twitter)
+      params.require(:customer).permit(:first_name, :last_name,:gender, :age, :phone_number,:email)
     end
 end
