@@ -1,7 +1,24 @@
 <h1>Editing Customer</h1>
 <br/>
+<div class="modal" id="customer-modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Product details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+
+              <div class="modal-body">
+                FirstName: <%= @customer.first_name%>
+                <br>
+                FirstName: <%= @customer.last_name%>
+              </div>
+            </div>
+          </div>
+        </div>
+        
 
 <%= render 'form', customer: @customer %>
 <br/>
-<%= link_to 'Show', @customer, class:"btn btn-secondary" %> |
+<%= link_to 'Show', "#customer-modal", class:"btn btn-secondary", "data-bs-toggle": "modal" %>
 <%= link_to 'Back', customers_path, class:"btn btn-secondary"%>

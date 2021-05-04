@@ -1,24 +1,8 @@
 
-
-<body>
-   <form>
-      <select id="vendor" >
-         <option> Juice</option>
-         <option> Biscuts</option>
-         <option> Snacks</option>
-         <option> Tea&Coffe</option>
-      </select>
-   </form>
-   <script type="text/javascript">
-      
-   </script>
-
-</body>
-
 <h1>Customers</h1>
 
 <table id="simple-example" class="table table-striped table-bordered table-hover">
-  <thead class="table-dark"> 
+  <thead class="table-dark">
     <tr>
       <th>First name</th>
       <th>Last name</th>
@@ -40,11 +24,38 @@
         <td><%= customer.age %></td>
         <td><%= customer.phone_number %></td>
         <td><%= customer.email %></td>
-        
-        <td><%= link_to 'Show', customer, class: "btn btn-mini", remote: true %></td>
+
+        <td><%= link_to 'Show', "#customer-#{customer.id}", class: "btn btn-mini", "data-bs-toggle" => "modal"%></td>
+
         <td><%= link_to 'Edit', edit_customer_path(customer), class: "btn btn-mini", remote: true %></td>
-        
+
         <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-mini", remote: true%></td>
+        <div class="modal" id="customer-<%=customer.id%>">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Product details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+
+              <div class="modal-body">
+                FirstName: <%= customer.first_name%>
+                <br>
+                LastName: <%= customer.last_name%>
+                <br>
+                Gender: <%= customer.gender %>
+                <br>
+                Age: <%= customer.age %>
+                <br>
+                Phone_number: <%= customer.phone_number %>
+                <br>
+                Email: <%= customer.email %>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>
@@ -52,7 +63,7 @@
 
 <br>
 <%= form_for @customer do |form| %>
-  
+
 <div class="container mt-5">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Create a product</button>
     <div class="modal" id="myModal">
@@ -62,10 +73,10 @@
             <h5 class="modal-title">Product details</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
-                       
+
           <div class="modal-body">
             <form>
-  
+
 
               <div class="field form-group">
                 <%= form.label :first_name %>
@@ -103,7 +114,7 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <%= submit_tag "Create product", class: " btn btn-primary"%>
               </div>
-                       
+
         </div>
       </div>
     </div>

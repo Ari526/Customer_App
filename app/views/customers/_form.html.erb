@@ -1,7 +1,7 @@
 <%= form_with(model: customer) do |form| %>
   
 <div class="container mt-5">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Create a product</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">update a product</button>
     <div class="modal" id="myModal">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -48,7 +48,7 @@
           </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <%= submit_tag "Create product", class: " btn btn-primary"%>
+                <%= submit_tag "update product", class: " btn btn-primary"%>
               </div>
                        
         </div>
