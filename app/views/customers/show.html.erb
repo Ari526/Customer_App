@@ -9,40 +9,38 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
                        
-<div class="modal-body">
-<form>
-<p>
-  <strong>First name:</strong>
-  <%= @customer.first_name %>
-</p>
+          <div class="modal-body">
+            <form>
+             <p>
+               <strong>First name:</strong>
+               <%= @customer.first_name %>
+             </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @customer.last_name %>
-</p>
+             <p>
+               <strong>Last name:</strong>
+               <%= @customer.last_name %>
+             </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @customer.gender %>
-</p>
+             <p>
+              <strong>Gender:</strong>
+              <%= @customer.gender %>
+             </p>
 
-<p>
-  <strong>Age:</strong>
-  <%= @customer.age %>
-</p>
+             <p>
+              <strong>Age:</strong>
+              <%= @customer.age %>
+             </p>
 
-<p>
-  <strong>Phone_number:</strong>
-  <%= @customer.phone_number %>
-</p>
+             <p>
+               <strong>Phone_number:</strong>
+               <%= @customer.phone_number %>
+              </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @customer.email %>
-</p>
-</form>
-</div>
-</div>
+             <p>
+              <strong>Email:</strong>
+              <%= @customer.email %>
+             </p>
+            </form>
 
 <%= link_to 'Edit', edit_customer_path(@customer), class:"btn btn-secondary"%> |
 <%= link_to 'Back', customers_path, class:"btn btn-secondary"%>

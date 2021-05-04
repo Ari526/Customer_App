@@ -1,4 +1,5 @@
 
+
 <body>
    <form>
       <select id="vendor" >
@@ -29,6 +30,7 @@
     </tr>
   </thead>
 
+
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
@@ -38,16 +40,72 @@
         <td><%= customer.age %></td>
         <td><%= customer.phone_number %></td>
         <td><%= customer.email %></td>
-        <td><%= link_to 'Show', customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <td><%= link_to 'Show', customer, class: "btn btn-mini", remote: true %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer), class: "btn btn-mini", remote: true %></td>
+        
+        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-mini", remote: true%></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-<div id="new-customer">
-<%= link_to 'New Customer', new_customer_path, class:"btn btn-secondary", remote: true %>
+<%= form_for @customer do |form| %>
+  
+<div class="container mt-5">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Create a product</button>
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Product details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+                       
+          <div class="modal-body">
+            <form>
+  
 
+              <div class="field form-group">
+                <%= form.label :first_name %>
+                <%= form.text_field :first_name, class:"form-control", placeholder:"First Name" %>
+              </div>
+
+              <div class="field form-group">
+                <%= form.label :last_name %>
+                <%= form.text_field :last_name, class:"form-control", placeholder: "Last Name"%>
+              </div>
+
+              <div class="field form-group">
+               <%= form.label :gender %>
+               <%= form.text_field :gender, class:"form-control" %>
+              </div>
+
+              <div class="field form-group">
+                <%= form.label :age %>
+                <%= form.text_field :age, class:"form-control" %>
+              </div>
+
+              <div class="field form-group">
+                <%= form.label :phone_number %>
+                <%= form.text_field :phone_number,class:"form-control" %>
+              </div>
+
+              <div class="field form-group">
+                <%= form.label :email %>
+                <%= form.text_field :email, class:"form-control" %>
+              </div>
+              <br/>
+              </form>
+          </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <%= submit_tag "Create product", class: " btn btn-primary"%>
+              </div>
+                       
+        </div>
+      </div>
+    </div>
 </div>
+<% end %>
