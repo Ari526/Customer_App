@@ -69,4 +69,6 @@ gem "bootstrap", "~> 4.6"
 
 gem "jquery", "~> 0.0.1"
 
+
+
 gem 'select2-rails'

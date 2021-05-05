@@ -12,6 +12,7 @@
 //= require_tree
 //= require select2
 
-    $(document).ready(function() {
-      $('select#simple-example').select2();
-    });
+    // In your Javascript (external .js resource or <script> tag)
+$(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});

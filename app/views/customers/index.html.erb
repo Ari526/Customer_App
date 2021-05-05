@@ -1,4 +1,10 @@
 
+
+<select class="js-example-basic-multiple" name="states[]" multiple="multiple">
+  <option value="AL">Alabama</option>
+    
+  <option value="WY">Wyoming</option>
+</select>
 <h1>Customers</h1>
 
 <table id="simple-example" class="table table-striped table-bordered table-hover">
@@ -13,8 +19,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
-
+    
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
@@ -26,8 +31,14 @@
         <td><%= customer.email %></td>
 
         <td><%= link_to 'Show', "#customer-#{customer.id}", class: "btn btn-mini", "data-bs-toggle" => "modal"%></td>
+        
 
-        <td><%= link_to 'Edit', edit_customer_path(customer), class: "btn btn-mini", remote: true %></td>
+        <td>
+          <%= link_to 'Edit', edit_customer_path(customer.id), class: "btn btn-mini", "data-bs-toggle" => "modal" , "data-bs-target" => "#myModal", remote: true %>
+          
+        </td>
+    
+        
 
         <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-mini", remote: true%></td>
         <div class="modal" id="customer-<%=customer.id%>">
