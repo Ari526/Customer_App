@@ -12,9 +12,23 @@
 //= require_tree
 //= require select2
 
+require("@rails/ujs").start()
+require('jquery')
+// require("jquery-ui")
 
+import $ from "jquery"
+
+// import jstree from 'jstree/src/jstree.js'
+import dt from 'datatables.net-dt';
+ 
+ $(document).ready(function(){
+    $("#orderTable").DataTable();
+    
+
+  });
 
     // In your Javascript (external .js resource or <script> tag)
 $(document).ready(function() {
     $('.js-example-basic-multiple').select2();
 });
+
